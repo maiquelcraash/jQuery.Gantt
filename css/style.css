@@ -1,14 +1,14 @@
 .gantt, .gantt2 {
     width: 100%;
     margin: 20px auto;
-    border: 14px solid #ddd;
+    border: 4px solid #ddd;
     position: relative;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .gantt:after {
@@ -36,7 +36,7 @@
 
 .fn-gantt .leftPanel {
     float: left;
-    width: 225px;
+    width: 300px;
     overflow: hidden;
     border-right: 1px solid #DDD;
     position: relative;
@@ -52,12 +52,15 @@
 
 .fn-gantt .leftPanel .fn-label {
     display: inline-block;
-    margin: 0 0 0 5px;
-    color: #484A4D;
-    width: 110px;
+    margin: 0 30px 0 5px;
+    color: #555;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+
 }
 
 .fn-gantt .leftPanel .row0 {
@@ -68,7 +71,7 @@
     height: 23px;
     margin: 0;
     border-bottom: 1px solid #DDD;
-    background-color: #f6f6f6;
+    background-color: rgb(238, 238, 238) ;
 }
 
 .fn-gantt .leftPanel .name {
@@ -81,13 +84,13 @@
 }
 
 .fn-gantt .leftPanel .fn-wide, .fn-gantt .leftPanel .fn-wide .fn-label {
-    width: 225px;
+    width: 100%;
 }
 
 .fn-gantt .spacer {
     margin: -2px 0 1px 0;
     border-bottom: none;
-    background-color: #f6f6f6;
+    background-color: rgb(238, 238, 238) ;
 }
 
 
@@ -149,7 +152,7 @@
 }
 
 .fn-gantt .wd {
-    background-color: #f6f6f6;
+    background-color: rgb(238, 238, 238);
     text-align: center;
 }
 
@@ -160,7 +163,7 @@
     border-bottom: 1px solid #DDD;
     height: 23px;
     margin: 0 0 0 -1px;
-    background-color: #f6f6f6;
+    background-color: rgb(238, 238, 238);
     font-weight: bold;
     font-size: 11px;
     color: #484a4d;
@@ -175,24 +178,47 @@
     position: absolute;
     display: none;
     z-index: 11;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 .fn-gantt .bar {
-    background-color: #D0E4FD;
+//background-color: #D0E4FD;
     height: 18px;
     margin: 0px 3px 3px 0px;
     position: absolute;
     z-index: 10;
     text-align: center;
-        -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.25) inset;
-        -moz-box-shadow: 0 0 1px rgba(0,0,0,0.25) inset;
-        box-shadow: 0 0 1px rgba(0,0,0,0.25) inset;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
+    -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.25) inset;
+    -moz-box-shadow: 0 0 1px rgba(0,0,0,0.25) inset;
+    box-shadow: 0 0 1px rgba(0,0,0,0.25) inset;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.fn-gantt .not-started {
+    background-color: #3A7BEC !important;
+}
+
+.fn-gantt .in-process {
+    background-color: #F1B500 !important;
+}
+
+.fn-gantt .overdue {
+    background-color: #E13E2B !important;
+}
+
+.fn-gantt .done {
+    background-color: #2BA24C !important;
+}
+
+.fn-gantt .real-bar {
+    background-color: #ffffff;
+    height: 2px;
+    position: absolute;
+    bottom: 4px;
 }
 
 .fn-gantt .bar .fn-label {
@@ -237,39 +263,41 @@
 }
 
 .fn-gantt .depLine {
-  background-color: transparent;
-  position: absolute;
-  z-index: 9999;
+    background-color: transparent;
+    position: absolute;
+    z-index: 9999;
 }
 
 .fn-gantt .depLineSh {
-  margin-top: 2px;
-  margin-left: 2px;
-  opacity: 0.3;
+    margin-top: 2px;
+    margin-left: 2px;
+    opacity: 0.3;
 }
 
 .fn-gantt .depStart, .fn-gantt .depEnd {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  -webkit-box-shadow: 1px 1px 1px 0px #444;
-  box-shadow: 1px 1px 1px 0px #444;
-  z-index: 10001;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 1px 1px 1px 0px #444;
+    box-shadow: 1px 1px 1px 0px #444;
+    z-index: 10001;
 }
 
 /* === BOTTOM NAVIGATION === */
 
 .fn-gantt .bottom {
     clear: both;
-    background-color: #f6f6f6;
+    background-color: rgb(238, 238, 238);
 }
 .fn-gantt .navigate {
     border-top: 1px solid #DDD;
-    padding: 10px 0 10px 225px;
+    padding: 10px 10px 10px 10px;
+    display: inline-block;
+    float: right;
 }
 
 .fn-gantt .navigate .nav-slider {
@@ -309,12 +337,12 @@
     height: 6px;
     background-color: #838688;
     margin: 8px 0 0 0;
-        -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6) inset;
-        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6) inset;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.6) inset;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6) inset;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.6) inset;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
 .fn-gantt .navigate .nav-slider-button {
@@ -355,15 +383,15 @@
     border: 1px solid #454546;
     cursor: pointer;
     vertical-align: top;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
-            -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 1px 1px rgba(0,0,0,0.2);
-            -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 1px 1px rgba(0,0,0,0.2);
-            box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 1px 1px rgba(0,0,0,0.2);
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 1px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 1px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 1px 1px rgba(0,0,0,0.2);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 .fn-gantt .nav-link:active {
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.25) inset, 0 1px 0 #FFF;
