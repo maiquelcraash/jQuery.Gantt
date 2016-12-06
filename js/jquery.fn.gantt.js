@@ -949,7 +949,25 @@
 								core.zoomInOut(element, 1);
 							}));
 				}
-				return $('<div class="bottom"/>').append(ganttNavigate);
+				var caption = $('<div class="caption-container"></div>')
+					.append($('<div class="caption"></div>')
+						.append($('<div class="box not-started"></div>'))
+						.append($('<div class="fn-label" >Programada</div>'))
+					)
+					.append($('<div class="caption"></div>')
+						.append($('<div class="box in-process"></div>'))
+						.append($('<div class="fn-label" >Em andamento</div>'))
+					)
+					.append($('<div class="caption"></div>')
+						.append($('<div class="box overdue"></div>'))
+						.append($('<div class="fn-label" >Atrasada</div>'))
+					)
+					.append($('<div class="caption"></div>')
+						.append($('<div class="box done"></div>'))
+						.append($('<div class="fn-label" >Concluída</div>'))
+					);
+
+				return $('<div class="bottom"/>').append(caption).append(ganttNavigate);
 			},
 
 			// **Progress Bar**
@@ -1509,7 +1527,7 @@
 						break;
 					case "months":
 						var bd = new Date(maxDate.getFullYear(), maxDate.getMonth(), 1);
-						bd.setMonth(bd.getMonth() + 6);
+						bd.setMonth(bd.getMonth() + 9);
 						maxDate = new Date(bd.getFullYear(), bd.getMonth(), 1);
 						break;
 					default:
@@ -1542,7 +1560,7 @@
 						break;
 					case "months":
 						var bd = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
-						bd.setMonth(bd.getMonth() - 6);
+						bd.setMonth(bd.getMonth() - 9);
 						minDate = new Date(bd.getFullYear(), bd.getMonth(), 1);
 						break;
 					default:

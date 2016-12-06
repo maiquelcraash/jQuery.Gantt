@@ -211,6 +211,28 @@
     background-color: #2BA24C !important;
 }
 
+.fn-gantt .caption-container {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.fn-gantt .caption-container .caption {
+    display: inline-flex;
+}
+
+.fn-gantt .caption-container .caption .box{
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
+}
+
+.fn-gantt .caption-container .caption .fn-label{
+    line-height: 13px;
+    margin-left: 2px;
+    font-size: 8pt;
+    color: #525151;
+}
+
 .fn-gantt .real-bar {
     background-color: #ffffff;
     height: 2px;
@@ -288,7 +310,8 @@
 
 .fn-gantt .bottom {
     clear: both;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(255, 255, 255);
+    display: flex;
 }
 .fn-gantt .navigate {
     border-top: 1px solid #DDD;
